@@ -21,20 +21,19 @@ app.post("/login", (req, res) => {
   res.status(401).send("Wrong credentials");
 });
 
-function auth(req, res, next) {
-  // const token = req.headers.authorization?.split(" ")[1];
-  const token = req.cookies.token;
+// function auth(req, res, next) {
+//   const token = req.cookies.token;
 
-  if (!token) return res.status(401).send("No Token");
+//   if (!token) return res.status(401).send("No Token");
 
-  try {
-    const decoded = jwt.verify(token, process.env.SECRET_KEY);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(401).send("Invalid Token");
-  }
-}
+//   try {
+//     const decoded = jwt.verify(token, process.env.SECRET_KEY);
+//     req.user = decoded;
+//     next();
+//   } catch (error) {
+//     res.status(401).send("Invalid Token");
+//   }
+// }
 
 app.get("/home", auth, (req, res) => {
   res.send(`Welcome ${req.user.username}`);
