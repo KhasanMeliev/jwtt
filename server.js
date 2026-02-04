@@ -10,6 +10,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+const users = [];
+
 app.post("/register", (req, res) => {
   const { username, password } = req.body;
   users.push({ username, password });
