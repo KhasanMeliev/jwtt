@@ -24,11 +24,7 @@ function App() {
     <div className="App">
       <h1>All Users</h1>
       <ul>
-        {users.map((user) => (
-          <li>
-            {user.username} - {user.password}
-          </li>
-        ))}
+        
       </ul>
     </div>
   );
