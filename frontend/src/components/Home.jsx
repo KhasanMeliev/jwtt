@@ -49,6 +49,7 @@ function Home() {
           </button>
         </a>
       </div>
+      
       <p className="text-3xl">Welcome to the Home Page</p>
       <ul>
         {users.map((user) => (
